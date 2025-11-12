@@ -5,7 +5,7 @@ import './style.css';
 
 // Importa nossas dependências "separadas"
 import { firebaseService } from './firebaseService.js';
-import { elements, render, renderConfigError, clearAddMeetingInput, hideAddMeetingCard } from './ui.js';
+import { elements, render, renderConfigError, clearAddMeetingInput } from './ui.js';
 import type { FirebaseData, LocalVotes, Meeting } from './domain.ts';
 import { RankingStrategyFactory } from './factories/RankingStrategyFactory';
 /**
