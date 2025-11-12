@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação Melhores Meetings 🏆</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🏆 Votação: As Melhores Meetings do Ano</h1>
+        <p>(Uma sátira ao time de Business)</p>
+    </header>
+
+    <main>
+        <section class="card" id="add-meeting">
+            <h3>Cadastrar Nova Meeting</h3>
+            <input type="text" id="meeting-name-input" placeholder="Nome da meeting 'visionária'...">
+            <button id="add-meeting-btn">Adicionar Meeting</button>
+        </section>
+
+        <section class="card" id="ranking">
+            <h2>Ranking Atual</h2>
+            <div id="loading">Carregando meetings...</div>
+            <ul id="meetings-list">
+                </ul>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
