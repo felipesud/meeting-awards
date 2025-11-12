@@ -94,12 +94,13 @@ button:hover {
 
 .meeting-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between;    
+    align-items: baseline;    
     flex-wrap: wrap;
     padding: 15px;
     border-bottom: 1px solid #333;
 }
+
 .meeting-item:last-child {
     border-bottom: none;
 }
@@ -112,12 +113,13 @@ button:hover {
 .meeting-info span {
     font-size: 1.1em;
     font-weight: 500;
-    display: block;
     color: #f5f5f5;
 }
+
 .meeting-info .stats {
     font-size: 0.9em;
-    color: #999;
+    color: #999;    
+    margin-left: 8px;
 }
 .meeting-info .stats strong {
     color: #e74c3c; 

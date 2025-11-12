@@ -43,6 +43,7 @@ async function onVoteClick(
         console.error('Erro ao submeter voto: ', error.message);
     }
 }
+
 function onDataReceived(data: FirebaseData, meusVotos: LocalVotes): void {
     if (!data || !data.settings) {
         renderConfigError();
@@ -71,10 +72,8 @@ function onDataReceived(data: FirebaseData, meusVotos: LocalVotes): void {
     });
 
     if (isVotingOpen) {
-        if (Object.keys(meusVotos).length > 0) {
-            hideAddMeetingCard();
-        }
-    } else {
+
+    } else {      
         const strategy = RankingStrategyFactory.create(algorithmKey);
         meetingsArray = strategy.calculateRanking(meetingsArray);
     }

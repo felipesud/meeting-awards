@@ -67,8 +67,44 @@ function renderVotingView(meetingsArray: Meeting[], voteHandler: VoteHandler): v
 function renderRankingView(meetingsArray: Meeting[]): void {
     elements.rankingTitle.textContent = 'Ranking Final 🏆';
     elements.addMeetingCard.style.display = 'none';
-    meetingsArray.forEach(meeting => {
-        const li = createMeetingItem(meeting, true);
+
+
+    meetingsArray.forEach((meeting, index) => {
+        const position = index + 1;
+        let medalIcon = ''; 
+
+        if (position === 1) {
+            medalIcon = '🥇';
+        } else if (position === 2) {
+            medalIcon = '🥈';
+        } else if (position === 3) {
+            medalIcon = '🥉';
+        }
+
+        
+        const li = document.createElement('li');
+        li.classList.add('meeting-item');
+
+        const positionSpan = document.createElement('span');
+        positionSpan.classList.add('ranking-position'); 
+        positionSpan.innerHTML = `${position}. ${medalIcon}`;
+
+        const infoDiv = document.createElement('div');
+        infoDiv.classList.add('meeting-info');
+        
+        const nameSpan = document.createElement('span');
+        nameSpan.textContent = meeting.name;
+        
+        const statsSpan = document.createElement('span');
+        statsSpan.classList.add('stats');
+        statsSpan.innerHTML = `Média: <strong>${meeting.average.toFixed(2)}</strong> (${meeting.vote_count} votos)`;
+        
+        infoDiv.appendChild(nameSpan);
+        infoDiv.appendChild(statsSpan);
+
+        li.appendChild(positionSpan);
+        li.appendChild(infoDiv);
+        
         elements.meetingsList.appendChild(li);
     });
 }
