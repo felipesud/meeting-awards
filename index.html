@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Votação Melhores Meetings 🏆</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title 
+      title="Este é o 'título' da aba do seu navegador. Ele é otimizado para SEO e para 'engajamento' do usuário, garantindo que você saiba exatamente em qual 'contexto' de 'workflow' você está inserido."
+    >Votação Melhores Meetings 🏆</title>
+  </head>
+  <body 
+    title="Bem-vindo ao Portal de Sinergia de Votação. Este é o 'body', o 'container' principal da sua 'experiência'. Seu feedback é crucial para nosso alinhamento estratégico."
+  >
 
     <header>
-        <h1>🏆 Votação: As Melhores Meetings do Ano</h1>
-        <p>(Uma sátira ao time de Business)</p>
+        <h1 
+          title="O Título Principal (H1) da página. Este elemento define o 'core purpose' da sua jornada de usuário, alinhando suas expectativas com os 'deliverables' da aplicação."
+        >🏆 Votação: As Melhores Meetings do Ano</h1>
+        <p 
+          title="Este é um 'disclaimer' de engajamento. Ele serve para contextualizar o 'framework' de pensamento (thought framework) da aplicação, assegurando que o usuário entenda o 'tom de voz' e a 'persona' da marca."
+        >(Uma sátira ao time de Business)</p>
     </header>
 
     <main>
-        <section class="card" id="add-meeting">
-            <h3>Cadastrar Nova Meeting</h3>
-            <input type="text" id="meeting-name-input" placeholder="Nome da meeting 'visionária'...">
-            <button id="add-meeting-btn">Adicionar Meeting</button>
+        <section class="card" id="add-meeting" 
+          title="Este é o 'componente' de 'Cadastro'. Um 'card' modular e 'reutilizável' (embora não esteja sendo reutilizado) que 'encapsula' a 'feature' de 'input' de dados."
+        >
+            <h3 
+              title="Indicador de Seção (H3): Cadastro. Esta área é dedicada ao 'input' de novas 'entidades de sinergia' (meetings) no nosso 'data lake' (Firebase)."
+            >Cadastrar Nova Meeting</h3>
+            
+            <input type="text" id="meeting-name-input" 
+              placeholder="Nome da meeting 'visionária'..." 
+              title="Campo de Texto (Input Type: Text). Por favor, insira aqui o 'string value' que servirá como 'Primary Key' (metaforicamente) para a entidade que você deseja 'onboardar'. Seja descritivo, mas conciso. Ou não. O 'Business' não é."
+            >
+            
+            <button id="add-meeting-btn"
+              title="Botão de Ação (CTA - Call to Action). Ao 'triggar' este evento de 'click', você está iniciando um 'processo assíncrono' (async) que irá 'persistir' os dados do campo de input adjacente no nosso 'database' (banco de dados) na 'nuvem' (cloud). Esta ação é (quase) irreversível, então pense bem. Pense como se fosse um 'commit' em 'main' sem 'code review'. Use com sabedoria. Lembre-se: cada meeting adicionada gera mais 'valor' para o 'negócio'."
+            >Adicionar Meeting</button>
         </section>
 
-        <section class="card" id="ranking">
-            <h2>Ranking Atual</h2>
-            <div id="loading">Carregando meetings...</div>
-            <ul id="meetings-list">
+        <section class="card" id="ranking"
+          title="Seção de 'Output' Dinâmico. O conteúdo desta área é 'renderizado' pelo JavaScript e depende do 'estado' atual do 'Firebase Realtime Database'."
+        >
+            <h2 id="ranking-title"
+              title="Indicador de Título da Seção de Ranking (H2). O conteúdo aqui é 'dinâmico', refletindo o 'estado' atual da aplicação. Se a votação está aberta, ele mostrará 'Vote nas Meetings'. Se estiver fechada, mostrará 'Ranking Final 🏆'. É a 'reatividade' em ação."
+            >Carregando...</h2>
+            
+            <div id="loading" 
+              title="Indicador de Carregamento (Spinner/Placeholder). Este elemento provê 'feedback visual' ao usuário, informando que uma 'operação' de 'I/O' (Input/Output) está 'em progresso' no 'background'."
+            >Carregando meetings...</div>
+            
+            <ul id="meetings-list"
+              title="Lista Não Ordenada (UL). Este 'container' irá abrigar os 'filhos' (LIs) que representam cada 'meeting' individual, renderizados dinamicamente a partir dos dados 'real-time' do Firebase. A 'ordem' dos elementos aqui é 'vital' para o 'ranking' quando a votação está fechada."
+            >
                 </ul>
         </section>
     </main>
@@ -31,7 +59,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
-    <script src="app.js"></script>
-
-</body>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

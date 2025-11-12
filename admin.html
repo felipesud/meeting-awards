@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title 
+      title="PAINEL DE ADMINISTRAÇÃO. Acesso restrito. Esta página controla os 'feature flags' da aplicação principal. Altere com 'responsabilidade estratégica'."
+    >Admin Panel - Meeting Awards</title>
+</head>
+<body>
+
+    <header>
+        <h1 
+          title="Painel de Administração (H1). Esta é a 'view' de 'alta-privilégio'. Apenas 'stakeholders' com a 'chave de acesso' (query string) podem 'interagir' com este 'módulo'. Grande poder traz grande responsabilidade."
+        >Painel de Admin 🔐</h1>
+        <p 
+          title="Subtítulo (P). Define o 'propósito' desta 'view' interna, reforçando a 'segurança' e o 'alinhamento' com a 'missão' de 'gerenciamento'."
+        >Acesso restrito para "Gerenciamento de Sinergia"</p>
+    </header>
+
+    <main id="admin-panel" style="display: none;">
+
+        <section class="card"
+          title="Card de Status (Leitura). Este 'componente' é 'read-only' e serve como um 'dashboard' para 'monitoramento' em 'real-time' dos 'flags' de 'feature' (feature flags) que controlam o 'core' da aplicação."
+        >
+            <h2>Status Atual</h2>
+            <p 
+              title="Indicador de Estado (Status Flag): 'isVotingOpen'. 'Verde' significa 'aberto' (true), 'Vermelho' significa 'fechado' (false). O 'toggle' deste 'booleano' é o principal 'driver' da 'experiência do usuário' (UX) na 'landing page'."
+            >Votação: <strong id="status-votacao">...</strong></p>
+            <p 
+              title="Indicador de Estratégia (Strategy Pattern Flag): 'rankingAlgorithm'. Define qual 'algoritmo' de 'cálculo' será 'injetado' (dependency injection) no 'módulo' de 'ranking' quando a votação for 'fechada'. Uma 'feature' 'robusta' e 'escalável'."
+            >Algoritmo de Ranking: <strong id="status-algoritmo">...</strong></p>
+        </section>
+    
+        <section class="card"
+          title="Módulo de Ações de Votação. Este 'componente' permite o 'toggle' do 'estado' principal da aplicação. As cores 'semânticas' (verde/vermelho) guiam o 'admin' para uma 'tomada de decisão' mais 'assertiva'."
+        >
+            <h3>Controlar Votação</h3>
+            
+            <button id="btn-open-voting" class="btn-success"
+              title="Ação de Admin (Botão Verde - 'Success'). Clicar aqui 'dispara' um 'evento' para o 'backend' (Firebase) que 'seta' o 'flag' 'isVotingOpen' para 'true'. Isso permite que os 'usuários finais' (end-users) possam 'submeter' seus 'quantificadores de valor' (votos). Use com cautela."
+            >ABRIR Votação</button>
+            
+            <button id="btn-close-voting" class="btn-danger"
+              title="Ação de Admin (Botão Vermelho - 'Danger'). ATENÇÃO: Esta é uma 'ação de alto impacto'. Clicar aqui 'seta' o 'flag' 'isVotingOpen' para 'false'. Isso irá 'triggar' a 'revelação' do 'ranking' para TODOS os usuários 'concorrentemente'. Não há 'confirmação' (mentira, tem um 'confirm()' do JS) e não há volta. Pressione apenas quando o 'quarter' fechar e os 'OKRs' de 'votação' estiverem 'completos'. Esta é a 'Grande Revelação' (The Big Reveal)."
+            >FECHAR Votação (Revelar Ranking)</button>
+        </section>
+
+        <section class="card"
+          title="Módulo de Configuração de Estratégia. Aqui, o 'gestor' pode 'pivotar' a 'lógica de negócio' do 'cálculo' de 'ranking' em 'tempo real', demonstrando 'agilidade' e 'flexibilidade' de 'arquitetura'."
+        >
+            <h3>Controlar Algoritmo de Ranking</h3>
+            <select id="select-algorithm" class="vote-select"
+              title="Seletor de Estratégia (Dropdown). Permite ao 'Admin' (você) 'selecionar' em 'real-time' qual 'implementação' do 'IRankingStrategy' (a 'interface') será 'instanciada' pela 'Factory' no momento da 'revelação' do 'ranking'. 'Clean Code' puro."
+            >
+                <option value="simple">Média Simples</option>
+                <option value="olympic">Média Olímpica</option>
+            </select>
+            
+            <button id="btn-set-algorithm"
+              title="Ação de Admin (Botão Azul - 'Primary'). 'Persiste' a sua 'seleção' do 'dropdown' adjacente no 'banco de dados', 'atualizando' o 'estado' do 'settings' para o 'próximo' ciclo de 'cálculo' de 'ranking'. A 'mudança' pode ser 'feita' a 'qualquer momento' para 'garantir' o 'alinhamento' com as 'diretrizes' do 'Board'."
+            >Definir Algoritmo</button>
+        </section>
+
+    </main>
+
+    <h1 id="access-denied" style="color: red; text-align: center; margin-top: 50px; display: none;"
+      title="Tela de Bloqueio (Access Denied). Esta 'view' é 'renderizada' se os 'parâmetros' de 'autenticação' (a 'query string' 'pass') não 'corresponderem' ao 'token' 'hardcoded' no 'admin.ts'. Uma 'barreira de segurança' 'robusta'."
+    >
+        ACESSO NEGADO
+    </h1>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script type="module" src="/src/admin.ts"></script>
+</body>
+</html>
